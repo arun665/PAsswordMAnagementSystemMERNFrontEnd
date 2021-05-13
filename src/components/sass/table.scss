@@ -46,13 +46,13 @@
            
            color:white;
            vertical-align: middle;
-           
+        
            font-size: 0.8em;
         }
         td:hover{
             color:black;
             background-color: white;
-            padding:0;
+       
         }
         button{
             font-size:1em;
@@ -63,7 +63,7 @@
 }
 
     animation-name: entry;
-    animation-duration: 3s;
+    animation-duration: 1s;
     }
     @keyframes entry {
         from{

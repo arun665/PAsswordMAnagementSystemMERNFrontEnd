@@ -88,6 +88,14 @@ export const editPassCat =(id,categories)=>{
 
 
 
+export const removeaddmsg=()=>{
+  return {
+      type:"REMOVE_ADD"
+    }
+}
+
+
+
 export const deletePassCat=(id)=>{
 
   var OPTIONS= {

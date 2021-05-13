@@ -22,10 +22,25 @@ function LoginContainer(props) {
   const [password,setPassword]=useState('');
   const [email,setEmail]=useState('');
   const [confirmpassword,setConfirmPassword]=useState('');
+  const [loader,setLoader]=useState(false);
   
+
+
   if(props.msg!=''){
     var msg=<Alert variant='danger'> <h3>{props.msg}</h3> </Alert>
 }
+
+const fetchData = ()=>{
+  props.loginUser(username,password)
+  setLoader(true);
+
+  setTimeout(()=>{
+    setLoader(false);
+  },4000);
+}
+
+
+
   return (
 
     <div id="signin">
@@ -41,18 +56,20 @@ function LoginContainer(props) {
 {msg}
 <Form.Group>
 <Form.Label>Username </Form.Label>
-<Form.Control type="text" defaultValue={props.username}  onChange={e=>setUsername(e.target.value)}/>
+<Form.Control type="text" defaultValue={props.username}  onChange={e=>setUsername(e.target.value)} required/>
 
 </Form.Group>
 
 <Form.Group >
 <Form.Label>Password</Form.Label>
-<Form.Control type="password" defaultValue={props.password}  onChange={e=>setPassword(e.target.value)}/>
+<Form.Control type="password" defaultValue={props.password}  onChange={e=>setPassword(e.target.value)} required/>
 </Form.Group>
 
 <p>Doesn't have an account?<Link to="/signup"> Create new Account</Link></p>
-<Button variant="primary"  onClick={()=>props.loginUser(username,password)}>
-Sign-In
+<Button variant="primary"  onClick={fetchData} disabled={loader}>
+
+{loader && <p> loading...</p>}
+{!loader && <p> Signin</p>}
 </Button>
 </Form>
 
@@ -73,7 +90,8 @@ const mapStatetoProps=(state)=>{
       username:state.user.username,
       password:state.user.password,
      
-      msg:state.user.msg
+      msg:state.user.msg,
+     
   }
 }
 

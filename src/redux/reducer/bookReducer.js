@@ -8,7 +8,7 @@ const initialState={
     id:'',
      user_id:'',
      password:'',
-     msg:''
+     addmsg:''
    
 }
 
@@ -19,7 +19,7 @@ const passReducer=(state=initialState,action)=>{
             ...state,
         category:action.payload,
         password:action.password,
-        msg:action.msg
+        addmsg:action.msg
         }
         case FETCH_PASSCAT:return{
             ...state,
@@ -46,6 +46,11 @@ const passReducer=(state=initialState,action)=>{
             ...state,
             action:'Add',
             msg:"category deleted successfully"
+        }
+        case "REMOVE_ADD" :return{
+      ...state,
+       addmsg:''
+            
         }
         
 

@@ -23,10 +23,25 @@ function SignupContainer(props) {
   const [Password,SetPassword]=useState('');
   const [Email,SetEmail]=useState('');
   const [Confirmpassword,SetConfirmPassword]=useState('');
+  const [loader,setLoader]=useState(false);
   
+
   if(props.signupmsg!=''){
               var msg=<Alert variant='danger'> <h3>{props.signupmsg}</h3> </Alert>
   }
+
+
+
+  const fetchData = ()=>{
+    props.signupUser(Username,Email,Password,Confirmpassword)
+    setLoader(true);
+  
+    setTimeout(()=>{
+      setLoader(false);
+    },4000);
+  }
+  
+
   return (
     <div id="signin">
     
@@ -42,30 +57,32 @@ function SignupContainer(props) {
     {msg}
   <Form.Group controlId="formBasicEmail">
     <Form.Label>Username {Username} </Form.Label>
-    <Form.Control type="text" defaultValue={props.username}  onChange={e=>SetUsername(e.target.value)}/>
+    <Form.Control type="text" defaultValue={props.username}  onChange={e=>SetUsername(e.target.value)} required/>
     
 
   </Form.Group>
 
   <Form.Group >
     <Form.Label>Email address</Form.Label>
-    <Form.Control type="email" defaultValue={props.email}  onChange={e=>SetEmail(e.target.value)}/>
+    <Form.Control type="email" defaultValue={props.email}  onChange={e=>SetEmail(e.target.value)} required/>
   </Form.Group>
 
   <Form.Group >
     <Form.Label>Password</Form.Label>
-    <Form.Control type="password" defaultValue={props.password}  onChange={e=>SetPassword(e.target.value)}/>
+    <Form.Control type="password" defaultValue={props.password}  onChange={e=>SetPassword(e.target.value)} required/>
    </Form.Group>
 
   <Form.Group >
     <Form.Label>Confirm Password</Form.Label>
-    <Form.Control type="password" defaultValue={props.confirmpassword}  onChange={e=>SetConfirmPassword(e.target.value)}/>
+    <Form.Control type="password" defaultValue={props.confirmpassword}  onChange={e=>SetConfirmPassword(e.target.value)} required/>
    
   </Form.Group>
 
 <p> Already having account? <Link to="/signin">Signin</Link></p>
-  <Button variant="primary"  onClick={()=>props.signupUser(Username,Email,Password,Confirmpassword)}>
-    SignUp
+  <Button variant="primary"  onClick={fetchData} disabled={loader} required>
+  
+{loader && <p> loading...</p>}
+{!loader && <p> Create Account </p>}
   </Button>
 </Form>
         </Col>

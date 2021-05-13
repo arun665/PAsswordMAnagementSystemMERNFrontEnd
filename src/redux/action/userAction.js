@@ -82,7 +82,8 @@ export const loginUser=(username,password)=>{
     {
         type:LOGIN_USER,
         payload:res.data.message,
-        isLoggedIn:true
+        isLoggedIn:true,
+     
     })
 
 }
@@ -118,7 +119,8 @@ console.log("logged out")
          dispatch(currentuser(""))
 
          dispatch({
-             type:LOGOUT_USER
+             type:LOGOUT_USER,
+             msg:''
             })
     
     }

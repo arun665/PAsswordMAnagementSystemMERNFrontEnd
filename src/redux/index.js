@@ -1,4 +1,4 @@
 
-export {addPassCat,fetchPassCat, deletePassCat} from "./action/bookAction.js";
+export {addPassCat,fetchPassCat, deletePassCat,removeaddmsg} from "./action/bookAction.js";
 
 

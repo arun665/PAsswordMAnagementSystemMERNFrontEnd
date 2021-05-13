@@ -5,7 +5,7 @@ const initialState={
     isLoggedin:false,
     username:'',email:'',user_id:'',password:'',confirmpassword:'',
     action:"Add",
-    id:'',msg:'',signupmsg:''
+    id:'',msg:'',signupmsg:'',signinloading:false
    
 }
 
@@ -22,7 +22,6 @@ const userReducer=(state=initialState,action)=>{
         ...state,
        msg:action.payload,
         isLoggedin:action.isLoggedIn
-
     }
 
          
@@ -39,7 +38,9 @@ const userReducer=(state=initialState,action)=>{
          
     case LOGOUT_USER:return{
         ...state,
-        isLoggedin:false
+        isLoggedin:false,
+        msg:action.msg,
+        signupmsg:''
 
     }
     

@@ -1,6 +1,6 @@
 import react ,{useState} from 'react';
 
-import {addPassCat,updatePassCat} from "../redux/index";
+import {addPassCat,updatePassCat,removeaddmsg} from "../redux/index";
 import {connect} from "react-redux";
 import Ripples from 'react-ripples';
 import './sass/addpassword.scss';
@@ -13,7 +13,10 @@ function BookContainer(props) {
     const [newpassword,setPassword]=useState('');
     if(props.msg!=''){
       var msg=<Alert variant='success'> <h3>{props.msg}</h3> </Alert>
-      
+
+      setTimeout(() => {
+          props.removeaddmsg();
+      }, 3000);
   }
       var ActionButton =   <button type="button" onClick={()=>props.addPassCat(category,props.user_id,newpassword)} className="btn btn-outline-primary"> Add  </button>
    
@@ -50,7 +53,7 @@ const mapStatetoProps=(state)=>{
         action:state.pass.action,
         id:state.pass.id,
         user_id:state.user.user_id,
-        msg:state.pass.msg
+        msg:state.pass.addmsg
     }
 }
 
@@ -59,6 +62,9 @@ const mapDispatchtoProps=(dispatch)=>{
 return{
     addPassCat:function(category,user_id,password){
      dispatch(addPassCat(category,user_id,password));
+    },
+    removeaddmsg:function(){
+        dispatch(removeaddmsg());
     }
 }
 }

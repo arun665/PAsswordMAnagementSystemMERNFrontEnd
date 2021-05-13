@@ -1,4 +1,4 @@
-import react ,{useState} from 'react';
+import react ,{useState , useEffect} from 'react';
 
 import { getPassCat } from '../redux/action/bookAction';
 
@@ -14,6 +14,8 @@ import SignupContainer from './SignupContainer.js';
 import LoginContainer from './LoginContainer.js';
 import Home from './Home.js';
 import Header from './Header.js';
+import Loader from './Loader.js';
+
 const Router = require("react-router-dom").BrowserRouter;
 const Route = require("react-router-dom").Route;
 
@@ -23,8 +25,19 @@ const Link = require("react-router-dom").Link;
 
 function MainContainer() {
 const isUserLoggedIn=useSelector(state=>state.user.isLoggedin);
-   if(isUserLoggedIn===false || localStorage.getItem("name")===null){
-var CallContainer=
+const [loader,setLoader]= useState(true);
+
+useEffect( ()=>{
+   console.log("lalllaaa");
+   setTimeout( ()=>{ setLoader(false) }, 5000);
+});
+
+if(loader){
+var CallContainer=<Loader/>
+}
+
+   if(isUserLoggedIn===false && !loader ){
+ CallContainer=
 <> 
 <DashBoardHome/>
 <Route exact path="/" component={Dashboard}/>
@@ -33,10 +46,12 @@ var CallContainer=
 
 <Route exact path="/weather" component={TempApp}/>
 
+          
+              
 
  </>;
    }
-   else{
+   else if(!loader){
 CallContainer=<>    
 
 <Header/>
@@ -56,6 +71,10 @@ CallContainer=<>
    }
   return (
     <div>
+
+
+
+
  {CallContainer}
    </div>
   );

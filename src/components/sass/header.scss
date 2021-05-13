@@ -26,11 +26,15 @@ color:white;
     color:white;
     background-color: blue;;
     text-decoration: none;
+    width:100%;
+}
+Link{
+    width: 100%;;
 }
     }
 
     animation-name: entry;
-    animation-duration: 3s;
+    animation-duration: 1s;
     }
     @keyframes entry {
         from{
