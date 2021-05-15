@@ -1,0 +1,148 @@
+#dashboard {
+  background-color: #f5f5f5;
+  width: 100%;
+  font-family: "Roboto Condensed", sans-serif;
+}
+#dashboard #div1 {
+  border: 1px solid grey;
+  border-radius: 10px;
+  padding: 2%;
+  width: 70%;
+  margin-left: 10%;
+  vertical-align: middle;
+  background-color: #adacac;
+  text-align: left;
+  margin: 1%;
+}
+#dashboard #div1 h1 {
+  font-size: 2em;
+  color: white;
+}
+#dashboard #div1 h5 {
+  font-size: 1.6em;
+  color: grey;
+}
+#dashboard #div1 li {
+  text-align: left;
+  font-size: 1.6em;
+  color: white;
+}
+#dashboard #container2 {
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+#dashboard #container2 h1 {
+  color: black;
+}
+#dashboard #social {
+  width: 80%;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-bottom: 10%;
+  border: 1px solid grey;
+  border-radius: 25px;
+}
+#dashboard #social #socialimg {
+  width: 100%;
+  border-radius: 25px;
+}
+#dashboard #social:hover {
+  box-shadow: 10px 10px 10px gray;
+}
+#dashboard #div {
+  width: 100%;
+  background-image: url("./bg1.jpg");
+  height: 100vh;
+  padding: 5%;
+}
+#dashboard #div #div3 h1 {
+  color: white;
+  text-align: left;
+  font-size: 4em;
+  background: transparent;
+  font-family: "Roboto Condensed", sans-serif;
+}
+@media screen and (max-width: 576px) {
+  #dashboard #div #div1 {
+    margin-bottom: 1%;
+    width: 65%;
+    margin-right: 5%;
+  }
+  #dashboard #div #div1 li {
+    color: black;
+  }
+  #dashboard #div #div3 h1 {
+    color: white;
+    text-align: left;
+    font-size: 2.1em;
+    margin-top: 5%;
+    background: transparent;
+    font-family: "Roboto Condensed", sans-serif;
+  }
+  #dashboard #div #container2 #h12 {
+    font-size: 2em;
+  }
+}
+@media screen and (max-width: 576px) {
+  #dashboard #div3 h1 {
+    color: white;
+    text-align: left;
+    font-size: 2.1em;
+    margin-top: 5%;
+    background: transparent;
+    font-family: "Roboto Condensed", sans-serif;
+  }
+  #dashboard #h12 {
+    font-size: 1.8em;
+  }
+  #dashboard #div1 {
+    margin-bottom: 2%;
+    border: 1px solid grey;
+    padding: 2%;
+    width: 95%;
+    margin-left: 2%;
+    vertical-align: middle;
+    background-color: #adacac;
+    color: white;
+    text-align: left;
+  }
+  #dashboard #div1 #h1, #dashboard #div1 #h5 {
+    font-size: 1.3em;
+  }
+  #dashboard #div1 #ul > li {
+    font-size: 1.2em;
+  }
+}
+#dashboard #bg {
+  width: 100%;
+  margin-top: 0%;
+}
+#dashboard #bgimg {
+  width: 100%;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  -webkit-animation: entry;
+          animation: entry;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+}
+
+@-webkit-keyframes entry {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes entry {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}/*# sourceMappingURL=dashboard.css.map */

@@ -12,7 +12,9 @@ import {Link} from "react-router-dom";
  import gmail from './sass/gmail.png';
  import linkedin from './sass/linkedin.webp';
  import amazon from './sass/amazon.webp';
-
+ import Review from './review.js';
+import forgot from './sass/forgot.gif';
+import lock from './sass/lock.gif';
 
  import ScrollAnimation from 'react-animate-on-scroll';
 
@@ -24,34 +26,103 @@ function DashBoard(){
 
         <div id="div">
 
-        <div id="div3"  data-aos="fade-right">
+        <div id="div3" >
 
-        <h1> A.S PASSWORD <br></br>MANAGER</h1>
+        <h1 data-aos="zoom-out"> A.S PASSWORD <br></br>MANAGER</h1>
 </div>
         </div>
 
+
+<div className="container-fluid" id="div2">
+  <div className="row">
+    <div className="col-md-6 col-sm-12 col-xs-6" >
+    <h5 id="h5" data-aos="zoom-out" style={{"color":"black"}}>What we provide you ??</h5>
+      <h5 data-aos="zoom-out" id="h5"> No more need to remember lots of passwords. Our A.S Password Manager is the ultimate application that stores your data very safely and makes it very  easy to access.</h5>
+    <br></br>
+    </div>
+    <div className="col-sm-12 col-md-6 col-xs-12">
+<img src={forgot} id="forgot" />
+</div> 
+    </div>
+  </div>
+
+
+  <div className="container-fluid" id="div4">
+  <div className="row">
+
+  <div className="col-sm-12 col-md-6 col-xs-12">
+<img src={lock} id="lock" />
+</div> 
+
+    <div className="col-md-6 col-sm-12 col-xs-6" >
+
+   <h1 data-aos="fade" id="h1"> 100% percent safe, lock your passwords in our password manager </h1>
+    <br></br>
+    </div>
+
+    </div>
+  </div>
+
+
+
+
+
 <div className="container-fluid" id="container2">
+
+<h1 id="h12"> BENEFITS OF OUR PASSWORD MANAGER :</h1>
+
         <div className="row" >
         
         <div className="col-md-6 col-sm-12 col-xs-12">
-        <div id="div1"  data-aos="fade" >
-      <h1 data-aos="fade" id="h1"> Protect your passwords using our Password Management System</h1>
-      <br></br>
-      <h5 data-aos="fade" id="h5"> No more need to remember lots of passwords. Our A.S Password Manager is the ultimate application that stores your data very safely and makes it very  easy to access.</h5>
-    <br></br>
-      <ul id="ul" >
+
+        <div id="div1"  data-aos="zoom-in" >
+      
+        <ul id="ul" >
         <li > easy to use </li>
-        <li> 100% safe</li>
-        <li> 1 month free trial</li>
-        <li> Lifetime access</li>
-        <li> Special discount for students </li>
-        
-        
-        
+      
       </ul>
-      </div>
+      
       </div>
 
+      <div id="div1"  data-aos="zoom-in" >
+      
+      <ul id="ul" >
+      <li> 100% safe</li>
+      
+    </ul>
+    
+    </div>
+    <div id="div1"  data-aos="zoom-in" >
+      
+      <ul id="ul" >
+      <li> 1 month free trial</li>
+
+    </ul>
+    
+    </div>
+    <div id="div1"  data-aos="zoom-in" >
+      
+      <ul id="ul" >
+      <li> Lifetime access</li>
+    
+    </ul>
+    
+    </div>
+    <div id="div1"  data-aos="zoom-in" >
+      
+      <ul id="ul" >
+    
+      <li> Special discount for students </li>
+     
+    </ul>
+    
+    </div>
+
+
+      </div>
+
+        
+        
 
 
 
@@ -68,66 +139,60 @@ function DashBoard(){
 
 
 
+<Review/>
+
+
     <div className="container-fluid" id="container2">
 
     <h1 id="h12"> SAVE YOUR SOCIAL MEDIA PASSWORDS :</h1>
     <br></br>
       <div className="row">
-        <div className="col-md-3 col-xs-6 col-sm12">
-          <div id="social"  data-aos="fade-down">
+        <div className="col-md-2 col-xs-6 col-sm-6">
+          <div id="social"  data-aos="zoom-in">
             <img src={instagram} id="socialimg"/>
           </div>
         </div>
 
-        <div className="col-md-3 col-xs-6 col-sm12">
-          <div id="social"  data-aos="fade-down">
+        <div className="col-md-2 col-xs-6 col-sm-6">
+          <div id="social"  data-aos="zoom-in">
             <img src={flipkart} id="socialimg"/>
           </div>
         </div>
 
-        <div className="col-md-3 col-xs-6 col-sm12">
-          <div id="social"  data-aos="fade-down">
+        <div className="col-md-2 col-xs-6 col-sm-12">
+          <div id="social"  data-aos="zoom-in">
             <img src={linkedin} id="socialimg"/>
           </div>
         </div>
 
-        <div className="col-md-3 col-xs-6 col-sm12">
-          <div id="social"  data-aos="fade-down">
+        <div className="col-md-2 col-xs-6 col-sm12">
+          <div id="social"  data-aos="zoom-in">
             <img src={facebook} id="socialimg"/>
           </div>
         </div>
 
-        <div className="col-md-3 col-xs-6 col-sm12">
-          <div id="social"  data-aos="fade-down">
+        <div className="col-md-2 col-xs-6 col-sm12">
+          <div id="social"  data-aos="zoom-in">
             <img src={tiktok} id="socialimg"/>
           </div>
         </div>
 
-        <div className="col-md-3 col-xs-12 col-sm12">
-          <div id="social"  data-aos="fade-down">
+        <div className="col-md-2 col-xs-12 col-sm12">
+          <div id="social"  data-aos="zoom-in">
             <img src={amazon} id="socialimg"/>
           </div>
         </div>
 
-        <div className="col-md-3 col-xs-12 col-sm12">
-          <div id="social"  data-aos="fade-down">
-            <img src={snapchat} id="socialimg"/>
-          </div>
-        </div>
-
-        <div className="col-md-3 col-xs-12 col-sm12">
-          <div id="social"  data-aos="fade-down">
-            <img src={gmail} id="socialimg"/>
-          </div>
-        </div>
-
+   
 
       </div>
     </div>
     </div>
     )
 }
+/*
 
+      */
 
-
+      
 export default DashBoard;

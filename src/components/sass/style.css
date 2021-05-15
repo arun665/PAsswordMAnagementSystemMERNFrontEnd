@@ -1,0 +1,92 @@
+#weather {
+  min-height: 100vh;
+  font-family: "Itim", cursive;
+  background-image: url("./weatherbg.jpg");
+  -webkit-animation-name: entry;
+          animation-name: entry;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+}
+#weather #header {
+  width: 100%;
+  padding: 3%;
+  font-family: "Itim", cursive;
+  color: white;
+}
+#weather #input {
+  margin-left: auto;
+  margin-right: auto;
+  width: 30%;
+  border: 2px solid grey;
+  border-radius: 25px;
+  font-size: 2em;
+  box-shadow: 5px 5px 10px grey;
+}
+#weather #img {
+  width: 50%;
+}
+#weather #container2 > h2 {
+  font-size: 3em;
+  color: white;
+}
+#weather #container2 > p {
+  font-size: 1.5em;
+  color: white;
+}
+#weather #container3 > h2 {
+  font-size: 3em;
+  color: white;
+}
+#weather #container3 > p {
+  font-size: 1.5em;
+  color: white;
+}
+#weather hr {
+  background-color: white;
+}
+#weather #headingimg {
+  width: 30%;
+}
+#weather #date {
+  margin-top: 5%;
+  font-size: 2em;
+}
+#weather #header > h1 {
+  font-size: 4em;
+}
+#weather #container2 > table {
+  font-size: 1.5em;
+  color: white;
+}
+#weather #container3 > table {
+  font-size: 1.5em;
+  color: white;
+}
+#weather #info {
+  color: white;
+  font-size: 3em;
+}
+@media screen and (max-width: 576px) {
+  #weather #input {
+    width: 60%;
+    font-size: 1.4em;
+  }
+}
+
+@-webkit-keyframes entry {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes entry {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}/*# sourceMappingURL=style.css.map */

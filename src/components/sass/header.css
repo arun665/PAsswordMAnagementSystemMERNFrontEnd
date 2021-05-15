@@ -1,0 +1,54 @@
+#header {
+  -webkit-animation-name: entry;
+          animation-name: entry;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+}
+#header #navbar {
+  color: white;
+}
+#header #brand {
+  color: white;
+}
+#header #brand2 {
+  color: white;
+}
+#header #brand:hover {
+  text-decoration: none;
+}
+@media screen and (max-width: 576px) {
+  #header #brand {
+    font-size: 1em;
+  }
+}
+#header #brandsub:hover {
+  background-color: #006eff;
+  color: white;
+}
+#header #brandsub:hover #link {
+  color: white;
+  background-color: blue;
+  text-decoration: none;
+  width: 100%;
+}
+#header #brandsub:hover Link {
+  width: 100%;
+}
+
+@-webkit-keyframes entry {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes entry {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}/*# sourceMappingURL=header.css.map */

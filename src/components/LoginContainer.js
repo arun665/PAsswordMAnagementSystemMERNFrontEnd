@@ -34,9 +34,14 @@ const fetchData = ()=>{
   props.loginUser(username,password)
   setLoader(true);
 
+
   setTimeout(()=>{
-    setLoader(false);
-  },4000);
+
+
+setLoader(false)
+
+    
+  },10000);
 }
 
 

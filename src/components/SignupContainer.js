@@ -24,7 +24,7 @@ function SignupContainer(props) {
   const [Email,SetEmail]=useState('');
   const [Confirmpassword,SetConfirmPassword]=useState('');
   const [loader,setLoader]=useState(false);
-  
+  const [timer,setTimer]=useState(10);
 
   if(props.signupmsg!=''){
               var msg=<Alert variant='danger'> <h3>{props.signupmsg}</h3> </Alert>
@@ -36,9 +36,11 @@ function SignupContainer(props) {
     props.signupUser(Username,Email,Password,Confirmpassword)
     setLoader(true);
   
+  
+   var time=timer;
     setTimeout(()=>{
       setLoader(false);
-    },4000);
+    },6000);
   }
   
 
@@ -81,7 +83,7 @@ function SignupContainer(props) {
 <p> Already having account? <Link to="/signin">Signin</Link></p>
   <Button variant="primary"  onClick={fetchData} disabled={loader} required>
   
-{loader && <p> loading...</p>}
+{loader && <p> loading... </p>}
 {!loader && <p> Create Account </p>}
   </Button>
 </Form>

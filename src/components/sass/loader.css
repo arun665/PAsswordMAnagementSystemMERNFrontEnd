@@ -1,0 +1,27 @@
+#loader {
+  font-family: "Roboto Condensed", sans-serif;
+  background-color: black;
+  height: 100vh;
+  width: 100vw;
+}
+#loader img {
+  margin-top: auto;
+  vertical-align: middle;
+  margin-bottom: auto;
+}
+#loader #typed {
+  font-size: 3em;
+  color: white;
+}
+@media screen and (max-width: 576px) {
+  #loader img {
+    margin-top: auto;
+    vertical-align: middle;
+    margin-bottom: auto;
+    width: 50%;
+  }
+  #loader #typed {
+    font-size: 1.5em;
+    color: white;
+  }
+}/*# sourceMappingURL=loader.css.map */

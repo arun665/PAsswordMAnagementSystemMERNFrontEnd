@@ -25,14 +25,14 @@ console.log(user_id);
     if(allCategories){
       
     var AllCat=allCategories.map((val,i)=>(
-        <tr key={i}>
-        <td key={val._id}>{i+1}</td>
+        <tr key={i} >
+        <td key={val._id}  data-aos="zoom-in">{i+1}</td>
         
      
-          <td > {val.passord_category}</td>
-          <td > {val.password}</td>
+          <td  data-aos="zoom-in"> {val.passord_category}</td>
+          <td  data-aos="zoom-in"> {val.password}</td>
           
-         <td><Button className="btn btn-outline-danger"  onClick={()=>DeleteCategory(val._id)}>Delete</Button></td>
+         <td data-aos="zoom-in"><Button className="btn btn-outline-danger"  onClick={()=>DeleteCategory(val._id)}>Delete</Button></td>
         </tr>
       ))
     }
