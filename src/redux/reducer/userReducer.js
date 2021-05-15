@@ -44,7 +44,16 @@ const userReducer=(state=initialState,action)=>{
 
     }
     
+   case "REMOVE_SIGNUP":return {
+       ...state,
+       signupmsg:''
+   }
 
+     
+   case "REMOVE_SIGNIN":return {
+    ...state,
+    msg:''
+}
         default:return state
     }
 

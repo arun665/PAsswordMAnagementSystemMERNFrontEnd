@@ -3,13 +3,13 @@ import axios from 'axios';
 import {ADD_PASSCAT , FETCH_PASSCAT ,EDIT_PASSCAT , UPDATE_PASSCAT ,DELETE_PASSCAT} from './passType.js';
 
 
-export const addPassCat=(category,user_id,password)=>{
+export const addPassCat=(category,user_id,password,type)=>{
 
   return function(dispatch){
     var OPTIONS= {
         method: 'POST',
         url: 'https://aspmsserver.herokuapp.com/api/addcategory',
-        data:{password_category:category,user_id:user_id,password:password},
+        data:{password_category:category,user_id:user_id,password:password,type:type},
         headers: {
           'Content-Type': 'application/json'
         }

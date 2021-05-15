@@ -1,8 +1,8 @@
-import react ,{useState} from 'react';
+import react ,{useEffect, useState} from 'react';
 import './sass/signin.scss';
 import { Container,Row,Col , Form ,Button,Alert} from 'react-bootstrap';
 
-import {addPassCat,updatePassCat,signupUser, loginUser} from "../redux/action/userAction";
+import {addPassCat,updatePassCat,signupUser, loginUser , removesignupmsg} from "../redux/action/userAction";
 import {connect} from "react-redux";
 import Ripples from 'react-ripples';
 import BookContainer from './BookContainer.js';
@@ -30,17 +30,28 @@ function SignupContainer(props) {
               var msg=<Alert variant='danger'> <h3>{props.signupmsg}</h3> </Alert>
   }
 
+  
+var l=<div class="spinner-border text-muted"></div>
 
+
+useEffect(()=>{
+  if(props.signupmsg!=""){
+    setLoader(false);
+    if(props.signupmsg!="User Registered Successfully"){
+    setTimeout(()=>{
+
+    props.removesignupmsg()
+    },3000)
+  }
+  }
+})
 
   const fetchData = ()=>{
     props.signupUser(Username,Email,Password,Confirmpassword)
     setLoader(true);
   
   
-   var time=timer;
-    setTimeout(()=>{
-      setLoader(false);
-    },6000);
+ 
   }
   
 
@@ -57,6 +68,7 @@ function SignupContainer(props) {
 
     <Form style={{'width':'80%','marginLeft':'auto','marginRight':'auto'}}>
     {msg}
+    {loader && l}
   <Form.Group controlId="formBasicEmail">
     <Form.Label>Username {Username} </Form.Label>
     <Form.Control type="text" defaultValue={props.username}  onChange={e=>SetUsername(e.target.value)} required/>
@@ -82,6 +94,7 @@ function SignupContainer(props) {
 
 <p> Already having account? <Link to="/signin">Signin</Link></p>
   <Button variant="primary"  onClick={fetchData} disabled={loader} required>
+
   
 {loader && <p> loading... </p>}
 {!loader && <p> Create Account </p>}
@@ -118,7 +131,10 @@ return{
   ,
   loginUser:function(username,password){
     dispatch(loginUser(username,password));
-  }
+  },
+  removesignupmsg:function(){
+    dispatch(removesignupmsg());
+}
 
 }
 }

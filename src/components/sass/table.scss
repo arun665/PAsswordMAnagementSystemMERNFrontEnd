@@ -26,6 +26,14 @@
             color:black;
             background-color: white;
         }
+        button{
+            background:transparent;;
+        }
+        button:hover{
+            background-color:red;;
+        }
+        
+        border:0px solid black;
     }
 
 @media  screen and (max-width:576px) {
@@ -57,6 +65,13 @@
         button{
             font-size:1em;
         }
+        button{
+            background:transparent;;
+        }
+        button:hover{
+            background-color:red;;
+        }
+        
     }
 
 

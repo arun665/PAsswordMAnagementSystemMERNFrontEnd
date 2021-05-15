@@ -26,13 +26,14 @@ console.log(user_id);
       
     var AllCat=allCategories.map((val,i)=>(
         <tr key={i} >
-        <td key={val._id}  data-aos="zoom-in">{i+1}</td>
+        <td key={val._id}  >{i+1}</td>
         
-     
-          <td  data-aos="zoom-in"> {val.passord_category}</td>
-          <td  data-aos="zoom-in"> {val.password}</td>
+        <td > {val.category}</td>
+        
+          <td  > {val.passord_category}</td>
+          <td  > {val.password}</td>
           
-         <td data-aos="zoom-in"><Button className="btn btn-outline-danger"  onClick={()=>DeleteCategory(val._id)}>Delete</Button></td>
+         <td><Button className="btn btn-outline-danger"  onClick={()=>DeleteCategory(val._id)}>Delete</Button></td>
         </tr>
       ))
     }
@@ -51,14 +52,21 @@ const DeleteCategory=(id)=>{
 
     return(
         <div id="table">
+          <h3 style={{"color":"white" , "float":"left"}}> Total-Passwords:{allCategories.length}</h3>
+          <br></br>
+          <br></br>
         <h1> Password List 🔒📑</h1>
-        <Table striped bordered hover>
+
+
+        <Table striped bordered hover data-aos="zoom-out">
   <thead>
     <tr>
     <th > S.No.</th>
  
       <th scope="col">category name</th>
-      <th scope="col">category password</th>
+      <th scope="col">Details</th>
+   
+      <th scope="col"> password</th>
   
     </tr>
   </thead>

@@ -125,3 +125,19 @@ console.log("logged out")
     
     }
 }
+
+
+
+export const removesignupmsg=()=>{
+    return {
+        type:"REMOVE_SIGNUP"
+      }
+  }
+
+
+  
+export const removemsg=()=>{
+    return {
+        type:"REMOVE_SIGNIN"
+      }
+  }

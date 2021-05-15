@@ -13,8 +13,6 @@ return (
   <h1> Hi {props.username}</h1>
 <br></br>
 <h2> Welcome to A.S Password Manager</h2>
-
-
 <h2 id="typed">
 
 <Typed
@@ -40,6 +38,7 @@ const mapStatetoProps=(state)=>{
 
     return{
         username:state.user.username,
+        user_id:state.user.user_id
     
     }
   }

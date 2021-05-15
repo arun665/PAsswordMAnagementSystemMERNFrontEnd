@@ -46,9 +46,6 @@ var CallContainer=<Loader/>
 
 <Route exact path="/weather" component={TempApp}/>
 
-          
-              
-
  </>;
    }
    else if(!loader){

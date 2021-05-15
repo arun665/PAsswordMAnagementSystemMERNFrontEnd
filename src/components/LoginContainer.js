@@ -1,9 +1,10 @@
 import { Container,Row,Col , Form ,Button, Alert } from 'react-bootstrap';
+import Loader from 'react-loaders'
 
-import react ,{useState} from 'react';
+import react ,{useState , useEffect} from 'react';
 import './sass/signin.scss';
 
-import {addPassCat,updatePassCat,signupUser, loginUser} from "../redux/action/userAction";
+import {addPassCat,updatePassCat,signupUser, loginUser , removemsg} from "../redux/action/userAction";
 import {connect} from "react-redux";
 import Ripples from 'react-ripples';
 import BookContainer from './BookContainer.js';
@@ -30,18 +31,29 @@ function LoginContainer(props) {
     var msg=<Alert variant='danger'> <h3>{props.msg}</h3> </Alert>
 }
 
+
+var l=<div class="spinner-border text-muted"></div>
+
+
+useEffect(()=>{
+  if(props.msg!=""){
+    setLoader(false);
+    if(props.msg!="User Registered Successfully"){
+    setTimeout(()=>{
+
+    props.removemsg()
+    },3000)
+  }
+  }
+})
+
+
+
 const fetchData = ()=>{
   props.loginUser(username,password)
   setLoader(true);
 
 
-  setTimeout(()=>{
-
-
-setLoader(false)
-
-    
-  },10000);
 }
 
 
@@ -54,11 +66,14 @@ setLoader(false)
     <Row>
     <Col>
     <h1>LOGIN-FORM</h1> 
-
+   
 
 
 <Form id="form" style={{'width':'80%','marginLeft':'auto','marginRight':'auto'}} >
 {msg}
+
+{loader && l}
+
 <Form.Group>
 <Form.Label>Username </Form.Label>
 <Form.Control type="text" defaultValue={props.username}  onChange={e=>setUsername(e.target.value)} required/>
@@ -109,6 +124,10 @@ return{
   ,
   loginUser:function(username,password){
     dispatch(loginUser(username,password));
+  }
+  ,
+  removemsg:function(username,password){
+    dispatch(removemsg());
   }
 
 }
