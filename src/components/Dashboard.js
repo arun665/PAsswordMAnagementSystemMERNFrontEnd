@@ -33,11 +33,11 @@ function DashBoard(){
         </div>
 
 
-<div className="container-fluid" id="div2">
+<div className="container-fluid" id="div2" data-aos="fade-up">
   <div className="row">
     <div className="col-md-6 col-sm-12 col-xs-6" >
-    <h5 id="h5" data-aos="zoom-out" style={{"color":"black"}}>What we provide you ??</h5>
-      <h5 data-aos="zoom-out" id="h5"> No more need to remember lots of passwords. Our A.S Password Manager is the ultimate application that stores your data very safely and makes it very  easy to access.</h5>
+    <h5 id="h5"  style={{"color":"black"}} data-aos="fade">What we provide you ??</h5>
+      <h5  id="h5" data-aos="fade"> No more need to remember lots of passwords. Our A.S Password Manager is the ultimate application that stores your data very safely and makes it very  easy to access.</h5>
     <br></br>
     </div>
     <div className="col-sm-12 col-md-6 col-xs-12">
@@ -47,7 +47,7 @@ function DashBoard(){
   </div>
 
 
-  <div className="container-fluid" id="div4">
+  <div className="container-fluid" id="div4" data-aos="fade-up">
   <div className="row">
 
   <div className="col-sm-12 col-md-6 col-xs-12">

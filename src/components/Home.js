@@ -2,6 +2,8 @@
 import{Navbar , Nav, NavDropdown} from 'react-bootstrap';
 import {connect, useStore} from "react-redux";
 import {logout} from "../redux/action/userAction.js";
+import {l} from "../redux/action/userAction.js";
+
 import {Link} from 'react-router-dom';
 import './sass/home.scss';
 import Typed from 'react-typed';
